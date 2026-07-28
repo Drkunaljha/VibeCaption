@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Model artifacts (large files — do not push to GitHub, see README)
+models/*.keras
+models/*.h5
+*.pkl
+
+# OS / editor junk
+.DS_Store
+.vscode/
+.idea/
+
+# Streamlit
+.streamlit/secrets.toml
