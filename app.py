@@ -124,7 +124,7 @@ with col2:
                     caption = generate_caption_blip(image, processor, blip_model, device, style_prefix=prefix)
             
             else:
-                with st.spinner("Looking at your image using CNN+LSTM..."):
+               with st.spinner("Looking at your image using CNN+LSTM..."):
                     try:
                         # कस्टम मॉडल फाइल्स को models/ फोल्डर से लोड करना
                         c_model, f_extractor, tokenizer, config = load_cnn_lstm_assets(
@@ -134,10 +134,9 @@ with col2:
                             "models/config.pkl"
                         )
                         caption = generate_caption_cnn_lstm(image, c_model, f_extractor, tokenizer, config)
-                   except Exception as e:
-                        st.error(f"असली एरर यह है: {e}")
+                    except Exception as e:
+                        st.error(f"Error: {e}")
                         caption = None
-
             if caption:
                 st.markdown(f'<div class="caption-box">"{caption}"</div>', unsafe_allow_html=True)
                 st.session_state.history.append({
