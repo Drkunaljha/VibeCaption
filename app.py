@@ -134,8 +134,8 @@ with col2:
                             "models/config.pkl"
                         )
                         caption = generate_caption_cnn_lstm(image, c_model, f_extractor, tokenizer, config)
-                    except Exception as e:
-                        st.error("CNN+LSTM model files not found in 'models/' folder. Please upload them!")
+                   except Exception as e:
+                        st.error(f"असली एरर यह है: {e}")
                         caption = None
 
             if caption:
